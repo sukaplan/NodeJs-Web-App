@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="mt-4">Successfully Registered Users</h1>
+
+    <ul>
+        <% for (const item of users) { %>
+            <li>
+                <p>
+                    <%= item.username %> - <%= item.email %>
+                </p>
+            </li>
+            <% } %>
+    </ul>

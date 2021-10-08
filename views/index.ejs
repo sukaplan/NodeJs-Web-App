@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="mt-4">Dashboard</h1>
+
+    <% if(currentUser) { %>
+        <p class="lead mb-3">Welcome <%= currentUser.name %>
+        </p>
+        <% if(currentUser.username==="admin" ) { %>
+            <form action="/registeredUsers" method="POST">
+                <button type="submit" class="btn btn-primary">View Registered Users</button>
+            </form>
+            <% } %>
+                <% } if(!currentUser) { %>
+                    <p>You must be logged in to see this page</p>
+                    <% } %>
